@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ShopKaro - Order Confirmed</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <style>
+
+        .success-page {
+
+            min-height: calc(100vh - 70px);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 50px 20px;
+
+            background-color: #f5f7fa;
+
+        }
+
+
+        .success-card {
+
+            width: 100%;
+
+            max-width: 600px;
+
+            background-color: white;
+
+            padding: 50px 35px;
+
+            border-radius: 15px;
+
+            text-align: center;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.08);
+
+        }
+
+
+        .success-icon {
+
+            width: 80px;
+
+            height: 80px;
+
+            margin: 0 auto 25px;
+
+            border-radius: 50%;
+
+            background-color: #28a745;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 45px;
+
+            font-weight: bold;
+
+        }
+
+
+        .success-card h1 {
+
+            color: #222;
+
+            margin-bottom: 15px;
+
+            font-size: 32px;
+
+        }
+
+
+        .success-card p {
+
+            color: #666;
+
+            line-height: 1.6;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .order-number {
+
+            margin: 25px 0;
+
+            padding: 15px;
+
+            background-color: #f5f7fa;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+
+            color: #222;
+
+        }
+
+
+        .success-buttons {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            margin-top: 30px;
+
+        }
+
+
+        .success-btn {
+
+            padding: 12px 25px;
+
+            border-radius: 6px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+
+        }
+
+
+        .home-btn {
+
+            background-color: #007bff;
+
+            color: white;
+
+        }
+
+
+        .home-btn:hover {
+
+            background-color: #0056b3;
+
+        }
+
+
+        .products-btn {
+
+            background-color: #28a745;
+
+            color: white;
+
+        }
+
+
+        .products-btn:hover {
+
+            background-color: #218838;
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .success-card {
+
+                padding: 40px 20px;
+
+            }
+
+
+            .success-card h1 {
+
+                font-size: 27px;
+
+            }
+
+
+            .success-buttons {
+
+                flex-direction: column;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <header>
+
+        <div class="logo">
+
+            <a href="index.html">
+                ShopKaro
+            </a>
+
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="products.html">
+                Products
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <div class="cart">
+
+            <a href="cart.html">
+
+                Cart
+
+                <span id="cart-count">
+                    0
+                </span>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- SUCCESS -->
+
+    <main class="success-page">
+
+        <div class="success-card">
+
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+
+            <h1>
+                Order Placed Successfully!
+            </h1>
+
+
+            <p>
+                Thank you for shopping with ShopKaro.
+            </p>
+
+
+            <p>
+                Your order has been received successfully.
+            </p>
+
+
+            <div class="order-number">
+
+                Order ID:
+                <span id="orderId">
+                    Generating...
+                </span>
+
+            </div>
+
+
+            <p>
+                We will process your order shortly.
+            </p>
+
+
+            <div class="success-buttons">
+
+                <a
+                    href="index.html"
+                    class="success-btn home-btn"
+                >
+                    Go to Home
+                </a>
+
+
+                <a
+                    href="products.html"
+                    class="success-btn products-btn"
+                >
+                    Continue Shopping
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h3>
+                ShopKaro
+            </h3>
+
+            <p>
+                Your trusted online shopping destination.
+            </p>
+
+            <p class="copyright">
+                © 2026 ShopKaro. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <script>
+
+        function generateOrderId() {
+
+            var number =
+                Math.floor(
+                    100000 +
+                    Math.random() * 900000
+                );
+
+
+            return "SK" + number;
+
+        }
+
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function() {
+
+                var orderId =
+                    localStorage.getItem(
+                        "shopkaroOrderId"
+                    );
+
+
+                if (!orderId) {
+
+                    orderId =
+                        generateOrderId();
+
+
+                    localStorage.setItem(
+                        "shopkaroOrderId",
+                        orderId
+                    );
+
+                }
+
+
+                document.getElementById(
+                    "orderId"
+                ).innerText =
+                    orderId;
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1237 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ShopKaro - Products</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <style>
+
+        /* =========================================
+           PRODUCTS PAGE
+           ========================================= */
+
+        .products-page {
+            padding: 50px;
+            background-color: #f5f7fb;
+            min-height: 600px;
+        }
+
+
+        /* PAGE HEADER */
+
+        .products-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .products-header h1 {
+            margin: 0 0 8px 0;
+            color: #1f2937;
+            font-size: 36px;
+        }
+
+        .products-header p {
+            margin: 0;
+            color: #6b7280;
+            font-size: 16px;
+        }
+
+
+        /* =========================================
+           CONTROLS
+           ========================================= */
+
+        .product-controls {
+            max-width: 1200px;
+            margin: 0 auto 35px auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            flex-wrap: wrap;
+        }
+
+        .search-container {
+            display: flex;
+
+            width: 500px;
+            max-width: 100%;
+
+            margin-right: 15px;
+            margin-bottom: 10px;
+        }
+
+        .search-container input {
+            width: 100%;
+
+            padding: 12px 15px;
+
+            border: 1px solid #d8dde5;
+
+            border-right: none;
+
+            border-radius: 6px 0 0 6px;
+
+            background-color: white;
+
+            font-size: 15px;
+
+            outline: none;
+        }
+
+        .search-container button {
+            padding: 12px 20px;
+
+            border: none;
+
+            border-radius: 0 6px 6px 0;
+
+            background-color: #087ff5;
+
+            color: white;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .search-container button:hover {
+            background-color: #005ecb;
+        }
+
+
+        .product-filter {
+            padding: 12px 15px;
+
+            margin-right: 10px;
+            margin-bottom: 10px;
+
+            border: 1px solid #d8dde5;
+
+            border-radius: 6px;
+
+            background-color: white;
+
+            color: #333;
+
+            font-size: 14px;
+
+            cursor: pointer;
+
+            outline: none;
+        }
+
+
+        /* =========================================
+           PRODUCTS LIST
+           ========================================= */
+
+        .products-grid {
+            width: 100%;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+        /* =========================================
+           PRODUCT CARD
+           ========================================= */
+
+        .shop-product-card {
+
+            position: relative;
+
+            width: 100%;
+
+            min-height: 270px;
+
+            margin-bottom: 25px;
+
+            padding: 20px;
+
+            background-color: white;
+
+            border: 1px solid #e6e9ef;
+
+            border-radius: 14px;
+
+            box-shadow:
+                0 5px 18px
+                rgba(0, 0, 0, 0.07);
+
+            display: flex;
+
+            align-items: center;
+
+            transition: all 0.3s ease;
+        }
+
+
+        .shop-product-card:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 10px 25px
+                rgba(0, 0, 0, 0.11);
+        }
+
+
+        /* =========================================
+           PRODUCT IMAGE
+           ========================================= */
+
+        .shop-product-image {
+
+            width: 42%;
+
+            height: 250px;
+
+            flex-shrink: 0;
+
+            margin-right: 30px;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            background-color: #edf4ff;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        .shop-product-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: block;
+
+            object-fit: contain;
+        }
+
+
+        /* =========================================
+           PRODUCT INFORMATION
+           ========================================= */
+
+        .shop-product-card h2 {
+
+            margin: 0 0 10px 0;
+
+            color: #1f2937;
+
+            font-size: 25px;
+        }
+
+
+        .shop-product-price {
+
+            margin: 0 0 10px 0;
+
+            color: #087ff5;
+
+            font-size: 24px;
+
+            font-weight: 800;
+        }
+
+
+        .old-price {
+
+            color: #999;
+
+            font-size: 14px;
+
+            font-weight: normal;
+
+            text-decoration: line-through;
+
+            margin-left: 8px;
+        }
+
+
+        .product-rating {
+
+            margin-bottom: 12px;
+
+            color: #f59e0b;
+
+            font-size: 15px;
+        }
+
+
+        .product-rating span {
+
+            color: #666;
+
+            margin-left: 5px;
+        }
+
+
+        .shop-product-description {
+
+            max-width: 550px;
+
+            margin: 0 0 20px 0;
+
+            color: #6b7280;
+
+            font-size: 15px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================================
+           BUTTONS
+           ========================================= */
+
+        .product-buttons {
+
+            display: flex;
+
+            width: 100%;
+
+            max-width: 550px;
+        }
+
+
+        .add-cart-btn {
+
+            flex: 1;
+
+            padding: 12px 20px;
+
+            margin-right: 10px;
+
+            border: none;
+
+            border-radius: 6px;
+
+            background-color: #22a447;
+
+            color: white;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+
+        .add-cart-btn:hover {
+
+            background-color: #18883a;
+        }
+
+
+        .view-btn {
+
+            flex: 1;
+
+            padding: 12px 20px;
+
+            border-radius: 6px;
+
+            background-color: #087ff5;
+
+            color: white;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            font-size: 15px;
+
+            font-weight: bold;
+        }
+
+
+        .view-btn:hover {
+
+            background-color: #005ecb;
+
+            color: white;
+        }
+
+
+        /* =========================================
+           BADGE
+           ========================================= */
+
+        .product-badge {
+
+            position: absolute;
+
+            top: 15px;
+
+            left: 15px;
+
+            z-index: 5;
+
+            padding: 5px 11px;
+
+            border-radius: 20px;
+
+            background-color: #ff4757;
+
+            color: white;
+
+            font-size: 11px;
+
+            font-weight: bold;
+        }
+
+
+        .product-badge.sale {
+
+            background-color: #22a447;
+        }
+
+
+        /* =========================================
+           NO RESULTS
+           ========================================= */
+
+        .no-results {
+
+            display: none;
+
+            text-align: center;
+
+            margin-top: 30px;
+
+            color: #777;
+
+            font-size: 18px;
+        }
+
+
+        /* =========================================
+           TABLET
+           ========================================= */
+
+        @media (max-width: 800px) {
+
+            .products-page {
+                padding: 35px 20px;
+            }
+
+
+            .shop-product-card {
+
+                display: block;
+
+                text-align: center;
+            }
+
+
+            .shop-product-image {
+
+                width: 100%;
+
+                height: 260px;
+
+                margin-right: 0;
+
+                margin-bottom: 25px;
+            }
+
+
+            .shop-product-description {
+
+                max-width: none;
+            }
+
+
+            .product-buttons {
+
+                max-width: none;
+            }
+        }
+
+
+        /* =========================================
+           MOBILE
+           ========================================= */
+
+        @media (max-width: 500px) {
+
+            .products-page {
+                padding: 30px 12px;
+            }
+
+
+            .products-header h1 {
+                font-size: 29px;
+            }
+
+
+            .search-container {
+                width: 100%;
+
+                margin-right: 0;
+            }
+
+
+            .product-filter {
+                width: 100%;
+
+                margin-right: 0;
+            }
+
+
+            .shop-product-card {
+                padding: 15px;
+            }
+
+
+            .shop-product-image {
+                height: 220px;
+            }
+
+
+            .shop-product-card h2 {
+                font-size: 21px;
+            }
+
+
+            .product-buttons {
+                display: block;
+            }
+
+
+            .add-cart-btn,
+            .view-btn {
+                display: block;
+
+                width: 100%;
+
+                margin: 0 0 10px 0;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         NAVBAR
+         ========================================= -->
+
+    <header>
+
+        <div class="logo">
+
+            <a href="index.html">
+                ShopKaro
+            </a>
+
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="products.html">
+                Products
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <div class="cart">
+
+            <a href="cart.html">
+
+                🛒 Cart
+
+                <span id="cart-count">
+                    0
+                </span>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         PRODUCTS
+         ========================================= -->
+
+    <main class="products-page">
+
+
+        <div class="products-header">
+
+            <h1>
+                Our Products
+            </h1>
+
+            <p>
+                Find the best products at the best prices.
+            </p>
+
+        </div>
+
+
+
+        <!-- SEARCH / FILTER -->
+
+        <div class="product-controls">
+
+
+            <div class="search-container">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search products..."
+                    oninput="searchProducts()"
+                >
+
+                <button
+                    type="button"
+                    id="searchButton"
+                >
+                    Search
+                </button>
+
+            </div>
+
+
+            <select
+                id="categoryFilter"
+                class="product-filter"
+            >
+
+                <option value="all">
+                    All Categories
+                </option>
+
+                <option value="electronics">
+                    Electronics
+                </option>
+
+                <option value="fashion">
+                    Fashion
+                </option>
+
+            </select>
+
+
+            <select
+                id="sortProducts"
+                class="product-filter"
+                onchange="sortProducts()"
+            >
+
+                <option value="default">
+                    Sort Products
+                </option>
+
+                <option value="low">
+                    Price: Low to High
+                </option>
+
+                <option value="high">
+                    Price: High to Low
+                </option>
+
+                <option value="name">
+                    Name: A to Z
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- =========================================
+             PRODUCTS GRID
+             ========================================= -->
+
+        <div
+            class="products-grid"
+            id="productsGrid"
+        >
+
+
+            <!-- PRODUCT 1 -->
+
+            <div
+                class="shop-product-card"
+                data-name="premium headphones"
+                data-category="electronics"
+                data-price="999"
+            >
+
+                <span class="product-badge">
+                    Popular
+                </span>
+
+
+                <div class="shop-product-image">
+
+                    <img
+                        src="images/product1.jpg"
+                        alt="Premium Headphones"
+                    >
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <h2>
+                        Premium Headphones
+                    </h2>
+
+                    <p class="shop-product-price">
+
+                        ₹999
+
+                        <span class="old-price">
+                            ₹1,299
+                        </span>
+
+                    </p>
+
+                    <div class="product-rating">
+
+                        ★★★★★
+
+                        <span>
+                            4.8
+                        </span>
+
+                    </div>
+
+                    <p class="shop-product-description">
+
+                        High-quality headphones with clear
+                        sound and comfortable design.
+
+                    </p>
+
+
+                    <div class="product-buttons">
+
+                        <button
+                            type="button"
+                            class="add-cart-btn"
+                            data-id="1"
+                        >
+                            Add to Cart
+                        </button>
+
+                        <a
+                            href="product.html?id=1"
+                            class="view-btn"
+                        >
+                            View
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 2 -->
+
+            <div
+                class="shop-product-card"
+                data-name="smart watch"
+                data-category="electronics"
+                data-price="1499"
+            >
+
+                <span class="product-badge sale">
+                    Sale
+                </span>
+
+
+                <div class="shop-product-image">
+
+                    <img
+                        src="images/product2.jpg"
+                        alt="Smart Watch"
+                    >
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <h2>
+                        Smart Watch
+                    </h2>
+
+                    <p class="shop-product-price">
+
+                        ₹1,499
+
+                        <span class="old-price">
+                            ₹1,999
+                        </span>
+
+                    </p>
+
+                    <div class="product-rating">
+
+                        ★★★★★
+
+                        <span>
+                            4.7
+                        </span>
+
+                    </div>
+
+                    <p class="shop-product-description">
+
+                        Stylish smart watch for your
+                        everyday activities.
+
+                    </p>
+
+
+                    <div class="product-buttons">
+
+                        <button
+                            type="button"
+                            class="add-cart-btn"
+                            data-id="2"
+                        >
+                            Add to Cart
+                        </button>
+
+                        <a
+                            href="product.html?id=2"
+                            class="view-btn"
+                        >
+                            View
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 3 -->
+
+            <div
+                class="shop-product-card"
+                data-name="smart phone"
+                data-category="electronics"
+                data-price="1999"
+            >
+
+                <span class="product-badge">
+                    New
+                </span>
+
+
+                <div class="shop-product-image">
+
+                    <img
+                        src="images/product3.jpg"
+                        alt="Smart Phone"
+                    >
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <h2>
+                        Smart Phone
+                    </h2>
+
+                    <p class="shop-product-price">
+                        ₹1,999
+                    </p>
+
+                    <div class="product-rating">
+
+                        ★★★★☆
+
+                        <span>
+                            4.5
+                        </span>
+
+                    </div>
+
+                    <p class="shop-product-description">
+
+                        Modern smartphone with powerful
+                        everyday features.
+
+                    </p>
+
+
+                    <div class="product-buttons">
+
+                        <button
+                            type="button"
+                            class="add-cart-btn"
+                            data-id="3"
+                        >
+                            Add to Cart
+                        </button>
+
+                        <a
+                            href="product.html?id=3"
+                            class="view-btn"
+                        >
+                            View
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 4 -->
+
+            <div
+                class="shop-product-card"
+                data-name="wireless earbuds"
+                data-category="electronics"
+                data-price="799"
+            >
+
+                <span class="product-badge sale">
+                    Best Deal
+                </span>
+
+
+                <div class="shop-product-image">
+
+                    <img
+                        src="images/product4.jpg"
+                        alt="Wireless Earbuds"
+                    >
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <h2>
+                        Wireless Earbuds
+                    </h2>
+
+                    <p class="shop-product-price">
+
+                        ₹799
+
+                        <span class="old-price">
+                            ₹999
+                        </span>
+
+                    </p>
+
+                    <div class="product-rating">
+
+                        ★★★★★
+
+                        <span>
+                            4.6
+                        </span>
+
+                    </div>
+
+                    <p class="shop-product-description">
+
+                        Compact wireless earbuds with
+                        great sound quality.
+
+                    </p>
+
+
+                    <div class="product-buttons">
+
+                        <button
+                            type="button"
+                            class="add-cart-btn"
+                            data-id="4"
+                        >
+                            Add to Cart
+                        </button>
+
+                        <a
+                            href="product.html?id=4"
+                            class="view-btn"
+                        >
+                            View
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 5 -->
+
+            <div
+                class="shop-product-card"
+                data-name="laptop"
+                data-category="electronics"
+                data-price="49999"
+            >
+
+                <span class="product-badge">
+                    Premium
+                </span>
+
+
+                <div class="shop-product-image">
+
+                    <img
+                        src="images/product5.jpg"
+                        alt="Laptop"
+                    >
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <h2>
+                        Laptop
+                    </h2>
+
+                    <p class="shop-product-price">
+                        ₹49,999
+                    </p>
+
+                    <div class="product-rating">
+
+                        ★★★★★
+
+                        <span>
+                            4.9
+                        </span>
+
+                    </div>
+
+                    <p class="shop-product-description">
+
+                        Powerful laptop suitable for work,
+                        study and entertainment.
+
+                    </p>
+
+
+                    <div class="product-buttons">
+
+                        <button
+                            type="button"
+                            class="add-cart-btn"
+                            data-id="5"
+                        >
+                            Add to Cart
+                        </button>
+
+                        <a
+                            href="product.html?id=5"
+                            class="view-btn"
+                        >
+                            View
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 6 -->
+
+            <div
+                class="shop-product-card"
+                data-name="running shoes"
+                data-category="fashion"
+                data-price="1299"
+            >
+
+                <span class="product-badge sale">
+                    Trending
+                </span>
+
+
+                <div class="shop-product-image">
+
+                    <img
+                        src="images/product6.jpg"
+                        alt="Running Shoes"
+                    >
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <h2>
+                        Running Shoes
+                    </h2>
+
+                    <p class="shop-product-price">
+
+                        ₹1,299
+
+                        <span class="old-price">
+                            ₹1,599
+                        </span>
+
+                    </p>
+
+                    <div class="product-rating">
+
+                        ★★★★☆
+
+                        <span>
+                            4.4
+                        </span>
+
+                    </div>
+
+                    <p class="shop-product-description">
+
+                        Comfortable running shoes designed
+                        for everyday use.
+
+                    </p>
+
+
+                    <div class="product-buttons">
+
+                        <button
+                            type="button"
+                            class="add-cart-btn"
+                            data-id="6"
+                        >
+                            Add to Cart
+                        </button>
+
+                        <a
+                            href="product.html?id=6"
+                            class="view-btn"
+                        >
+                            View
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <p
+            id="noResults"
+            class="no-results"
+        >
+            No products found.
+        </p>
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h3>
+                ShopKaro
+            </h3>
+
+            <p>
+                Your trusted online shopping destination.
+            </p>
+
+            <p class="copyright">
+                © 2026 ShopKaro. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="js/products.js"></script>
+
+
+</body>
+
+</html>

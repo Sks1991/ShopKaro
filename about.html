@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ShopKaro - About Us</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <style>
+
+        .about-page {
+
+            background-color: #f5f7fa;
+
+            min-height: calc(100vh - 70px);
+
+        }
+
+
+        .about-hero {
+
+            padding: 70px 20px;
+
+            text-align: center;
+
+            background-color: #007bff;
+
+            color: white;
+
+        }
+
+
+        .about-hero h1 {
+
+            font-size: 42px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .about-hero p {
+
+            font-size: 18px;
+
+            max-width: 650px;
+
+            margin: 0 auto;
+
+            line-height: 1.6;
+
+        }
+
+
+        .about-content {
+
+            max-width: 1100px;
+
+            margin: 0 auto;
+
+            padding: 60px 20px;
+
+        }
+
+
+        .about-section {
+
+            background-color: white;
+
+            padding: 35px;
+
+            margin-bottom: 30px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 4px 15px
+                rgba(0, 0, 0, 0.08);
+
+        }
+
+
+        .about-section h2 {
+
+            color: #222;
+
+            margin-bottom: 15px;
+
+            font-size: 28px;
+
+        }
+
+
+        .about-section p {
+
+            color: #666;
+
+            line-height: 1.8;
+
+            font-size: 16px;
+
+        }
+
+
+        .about-features {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    3,
+                    1fr
+                );
+
+            gap: 25px;
+
+            margin-top: 25px;
+
+        }
+
+
+        .about-feature {
+
+            padding: 25px;
+
+            background-color: #f8f9fa;
+
+            border-radius: 10px;
+
+            text-align: center;
+
+        }
+
+
+        .about-feature-icon {
+
+            font-size: 40px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .about-feature h3 {
+
+            margin-bottom: 10px;
+
+            color: #222;
+
+        }
+
+
+        .about-feature p {
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .about-hero h1 {
+
+                font-size: 32px;
+
+            }
+
+
+            .about-features {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .about-section {
+
+                padding: 25px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <header>
+
+        <div class="logo">
+
+            <a href="index.html">
+                ShopKaro
+            </a>
+
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="products.html">
+                Products
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <div class="cart">
+
+            <a href="cart.html">
+
+                Cart
+
+                <span id="cart-count">
+                    0
+                </span>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ABOUT PAGE -->
+
+    <main class="about-page">
+
+
+        <section class="about-hero">
+
+            <h1>
+                About ShopKaro
+            </h1>
+
+            <p>
+                Your trusted online shopping destination
+                for quality products at great prices.
+            </p>
+
+        </section>
+
+
+
+        <div class="about-content">
+
+
+            <!-- OUR STORY -->
+
+            <section class="about-section">
+
+                <h2>
+                    Our Story
+                </h2>
+
+                <p>
+
+                    ShopKaro is an online shopping platform
+                    created to make everyday shopping simple,
+                    convenient and enjoyable.
+
+                    We bring a variety of products together
+                    in one place so customers can easily
+                    explore products, compare prices and
+                    place orders.
+
+                </p>
+
+            </section>
+
+
+
+            <!-- MISSION -->
+
+            <section class="about-section">
+
+                <h2>
+                    Our Mission
+                </h2>
+
+                <p>
+
+                    Our mission is to provide customers with
+                    a simple shopping experience, quality
+                    products and convenient ordering.
+
+                    We believe online shopping should be
+                    easy, transparent and accessible to
+                    everyone.
+
+                </p>
+
+            </section>
+
+
+
+            <!-- FEATURES -->
+
+            <section class="about-section">
+
+                <h2>
+                    Why Choose ShopKaro?
+                </h2>
+
+
+                <div class="about-features">
+
+
+                    <div class="about-feature">
+
+                        <div class="about-feature-icon">
+                            🛍️
+                        </div>
+
+                        <h3>
+                            Wide Selection
+                        </h3>
+
+                        <p>
+                            Explore different products
+                            from multiple categories.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="about-feature">
+
+                        <div class="about-feature-icon">
+                            💰
+                        </div>
+
+                        <h3>
+                            Great Prices
+                        </h3>
+
+                        <p>
+                            Find useful products at
+                            competitive prices.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="about-feature">
+
+                        <div class="about-feature-icon">
+                            🚚
+                        </div>
+
+                        <h3>
+                            Easy Shopping
+                        </h3>
+
+                        <p>
+                            Browse, add products to cart
+                            and checkout easily.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h3>
+                ShopKaro
+            </h3>
+
+            <p>
+                Your trusted online shopping destination.
+            </p>
+
+            <p class="copyright">
+                © 2026 ShopKaro. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

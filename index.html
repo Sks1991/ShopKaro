@@ -2,37 +2,32 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>ShopKaro - Online Shopping</title>
 
-    <!-- CSS File -->
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 
-
 <body>
-
 
     <!-- ================= NAVBAR ================= -->
 
     <header>
 
-        <!-- Logo -->
+        <!-- Logo / Website Name -->
         <div class="logo">
             <a href="index.html">
-                <img src="images/logo.png" alt="ShopKaro Logo">
+                ShopKaro
             </a>
         </div>
 
 
-        <!-- Navigation Menu -->
+        <!-- Navigation -->
         <nav>
-
             <a href="index.html">Home</a>
 
             <a href="products.html">Products</a>
@@ -40,7 +35,6 @@
             <a href="about.html">About</a>
 
             <a href="contact.html">Contact</a>
-
         </nav>
 
 
@@ -49,6 +43,7 @@
 
             <a href="cart.html">
                 🛒 Cart
+
                 <span id="cart-count">0</span>
             </a>
 
@@ -57,19 +52,18 @@
     </header>
 
 
-
     <!-- ================= HERO SECTION ================= -->
 
     <section class="hero">
 
-        <!-- Banner Image -->
+        <!-- Your banner image -->
         <img
             src="images/banner.jpg"
             alt="ShopKaro Shopping Banner"
         >
 
 
-        <!-- Hero Content -->
+        <!-- Dark overlay + content -->
         <div class="hero-content">
 
             <h1>
@@ -80,10 +74,8 @@
                 Find the best products at the best prices.
             </p>
 
-            <a href="products.html">
-                <button>
-                    Shop Now
-                </button>
+            <a href="products.html" class="shop-btn">
+                Shop Now
             </a>
 
         </div>
@@ -91,8 +83,7 @@
     </section>
 
 
-
-    <!-- ================= PRODUCTS SECTION ================= -->
+    <!-- ================= FEATURED PRODUCTS ================= -->
 
     <section class="products">
 
@@ -100,121 +91,185 @@
             Featured Products
         </h2>
 
+        <p class="section-description">
+            Explore our popular products and enjoy great prices.
+        </p>
+
 
         <div class="product-container">
 
 
-            <!-- ================= PRODUCT 1 ================= -->
+            <!-- PRODUCT 1 -->
 
             <div class="product-card">
 
-                <img
-                    src="images/product1.jpg"
-                    alt="Premium Product"
-                >
+                <div class="product-icon">
+                    🎧
+                </div>
 
                 <h3>
-                    Premium Product
+                    Premium Headphones
                 </h3>
 
-                <p>
+                <p class="price">
                     ₹999
                 </p>
 
-                <button onclick="addToCart()">
+                <p class="product-description">
+                    Enjoy clear sound and comfortable listening.
+                </p>
+
+                <button
+                    onclick="addToCart('Premium Headphones', 999)"
+                >
                     Add to Cart
                 </button>
 
             </div>
 
 
-
-            <!-- ================= PRODUCT 2 ================= -->
+            <!-- PRODUCT 2 -->
 
             <div class="product-card">
 
-                <img
-                    src="images/product2.jpg"
-                    alt="Latest Product"
-                >
+                <div class="product-icon">
+                    ⌚
+                </div>
 
                 <h3>
-                    Latest Product
+                    Smart Watch
                 </h3>
 
-                <p>
+                <p class="price">
                     ₹1,499
                 </p>
 
-                <button onclick="addToCart()">
+                <p class="product-description">
+                    Stylish smart watch for your everyday lifestyle.
+                </p>
+
+                <button
+                    onclick="addToCart('Smart Watch', 1499)"
+                >
                     Add to Cart
                 </button>
 
             </div>
 
 
-
-            <!-- ================= PRODUCT 3 ================= -->
+            <!-- PRODUCT 3 -->
 
             <div class="product-card">
 
-                <img
-                    src="images/product1.jpg"
-                    alt="Smart Product"
-                >
+                <div class="product-icon">
+                    📱
+                </div>
 
                 <h3>
-                    Smart Product
+                    Smart Phone
                 </h3>
 
-                <p>
+                <p class="price">
                     ₹1,999
                 </p>
 
-                <button onclick="addToCart()">
+                <p class="product-description">
+                    Modern design with powerful everyday features.
+                </p>
+
+                <button
+                    onclick="addToCart('Smart Phone', 1999)"
+                >
                     Add to Cart
                 </button>
 
             </div>
-
 
         </div>
 
     </section>
 
 
+    <!-- ================= WHY SHOPKARO ================= -->
+
+    <section class="features">
+
+        <h2>
+            Why ShopKaro?
+        </h2>
+
+
+        <div class="feature-container">
+
+            <div class="feature-card">
+                <div class="feature-icon">🚚</div>
+
+                <h3>
+                    Fast Delivery
+                </h3>
+
+                <p>
+                    Get your products delivered quickly to your doorstep.
+                </p>
+            </div>
+
+
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+
+                <h3>
+                    Secure Shopping
+                </h3>
+
+                <p>
+                    Your shopping experience is safe and secure.
+                </p>
+            </div>
+
+
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+
+                <h3>
+                    Best Prices
+                </h3>
+
+                <p>
+                    Shop quality products at affordable prices.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
 
     <!-- ================= FOOTER ================= -->
 
     <footer>
 
-        <p>
-            © 2026 ShopKaro. All Rights Reserved.
-        </p>
+        <div class="footer-content">
+
+            <h3>
+                ShopKaro
+            </h3>
+
+            <p>
+                Your trusted online shopping destination.
+            </p>
+
+            <p class="copyright">
+                © 2026 ShopKaro. All Rights Reserved.
+            </p>
+
+        </div>
 
     </footer>
 
 
-
     <!-- ================= JAVASCRIPT ================= -->
 
-    <script>
-
-        // Cart Count
-        let cartCount = 0;
-
-
-        // Add Product To Cart
-        function addToCart() {
-
-            cartCount++;
-
-            document.getElementById("cart-count").innerText = cartCount;
-
-        }
-
-    </script>
-
+    <script src="js/script.js"></script>
 
 </body>
 

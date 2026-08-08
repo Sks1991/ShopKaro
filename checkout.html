@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ShopKaro - Checkout</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+
+    <style>
+
+        /* =========================================
+           CHECKOUT PAGE
+           ========================================= */
+
+        .checkout-page {
+
+            min-height: calc(100vh - 70px);
+
+            padding: 50px;
+
+            background-color: #f5f7fa;
+
+        }
+
+
+        .checkout-title {
+
+            text-align: center;
+
+            margin-bottom: 40px;
+
+        }
+
+
+        .checkout-title h1 {
+
+            font-size: 36px;
+
+            color: #222;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .checkout-title p {
+
+            color: #666;
+
+        }
+
+
+        /* =========================================
+           CHECKOUT CONTAINER
+           ========================================= */
+
+        .checkout-container {
+
+            max-width: 1100px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 350px;
+
+            gap: 30px;
+
+            align-items: start;
+
+        }
+
+
+        /* =========================================
+           CHECKOUT FORM
+           ========================================= */
+
+        .checkout-form {
+
+            background-color: white;
+
+            padding: 30px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 4px 15px
+                rgba(0, 0, 0, 0.08);
+
+        }
+
+
+        .checkout-form h2 {
+
+            color: #222;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .form-group {
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .form-group label {
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-weight: bold;
+
+            color: #333;
+
+        }
+
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 6px;
+
+            font-size: 15px;
+
+            outline: none;
+
+        }
+
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+
+            border-color: #007bff;
+
+        }
+
+
+        .form-group textarea {
+
+            min-height: 100px;
+
+            resize: vertical;
+
+        }
+
+
+        /* =========================================
+           TWO COLUMN FORM
+           ========================================= */
+
+        .form-row {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 15px;
+
+        }
+
+
+        /* =========================================
+           PAYMENT
+           ========================================= */
+
+        .payment-options {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+
+        }
+
+
+        .payment-option {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 13px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+
+        }
+
+
+        .payment-option:hover {
+
+            border-color: #007bff;
+
+        }
+
+
+        .payment-option input {
+
+            width: auto;
+
+        }
+
+
+        /* =========================================
+           ORDER SUMMARY
+           ========================================= */
+
+        .checkout-summary {
+
+            background-color: white;
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 4px 15px
+                rgba(0, 0, 0, 0.08);
+
+            position: sticky;
+
+            top: 90px;
+
+        }
+
+
+        .checkout-summary h2 {
+
+            margin-bottom: 20px;
+
+            color: #222;
+
+        }
+
+
+        .checkout-product {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            padding: 12px 0;
+
+            border-bottom: 1px solid #eee;
+
+        }
+
+
+        .checkout-product img {
+
+            width: 60px;
+
+            height: 60px;
+
+            object-fit: contain;
+
+            background-color: #f5f7fa;
+
+            border-radius: 6px;
+
+        }
+
+
+        .checkout-product-info {
+
+            flex: 1;
+
+        }
+
+
+        .checkout-product-info h4 {
+
+            font-size: 14px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .checkout-product-info p {
+
+            font-size: 13px;
+
+            color: #666;
+
+        }
+
+
+        .checkout-product-price {
+
+            font-weight: bold;
+
+            font-size: 14px;
+
+        }
+
+
+        .summary-row {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-top: 15px;
+
+            color: #555;
+
+        }
+
+
+        .summary-total {
+
+            border-top: 1px solid #ddd;
+
+            padding-top: 15px;
+
+            margin-top: 18px;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            color: #222;
+
+        }
+
+
+        /* =========================================
+           PLACE ORDER
+           ========================================= */
+
+        .place-order-btn {
+
+            width: 100%;
+
+            margin-top: 25px;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 6px;
+
+            background-color: #28a745;
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+        }
+
+
+        .place-order-btn:hover {
+
+            background-color: #218838;
+
+        }
+
+
+        .back-cart-btn {
+
+            display: block;
+
+            text-align: center;
+
+            margin-top: 15px;
+
+            color: #007bff;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+        }
+
+
+        .back-cart-btn:hover {
+
+            text-decoration: underline;
+
+        }
+
+
+        /* =========================================
+           MOBILE
+           ========================================= */
+
+        @media (max-width: 800px) {
+
+            .checkout-page {
+
+                padding: 35px 15px;
+
+            }
+
+
+            .checkout-container {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .checkout-summary {
+
+                position: static;
+
+            }
+
+
+            .form-row {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         NAVBAR
+         ========================================= -->
+
+    <header>
+
+        <div class="logo">
+
+            <a href="index.html">
+                ShopKaro
+            </a>
+
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="products.html">
+                Products
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <div class="cart">
+
+            <a href="cart.html">
+
+                Cart
+
+                <span id="cart-count">
+                    0
+                </span>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         CHECKOUT PAGE
+         ========================================= -->
+
+    <main class="checkout-page">
+
+
+        <div class="checkout-title">
+
+            <h1>
+                Checkout
+            </h1>
+
+            <p>
+                Enter your details to place your order.
+            </p>
+
+        </div>
+
+
+
+        <div class="checkout-container">
+
+
+            <!-- =====================================
+                 CUSTOMER FORM
+                 ===================================== -->
+
+            <div class="checkout-form">
+
+                <h2>
+                    Delivery Details
+                </h2>
+
+
+                <form id="checkoutForm">
+
+
+                    <div class="form-group">
+
+                        <label for="fullName">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="mobile">
+                            Mobile Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="mobile"
+                            placeholder="Enter your mobile number"
+                            maxlength="10"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="address">
+                            Address
+                        </label>
+
+                        <textarea
+                            id="address"
+                            placeholder="House number, street, area"
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <div class="form-row">
+
+
+                        <div class="form-group">
+
+                            <label for="city">
+                                City
+                            </label>
+
+                            <input
+                                type="text"
+                                id="city"
+                                placeholder="City"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label for="state">
+                                State
+                            </label>
+
+                            <input
+                                type="text"
+                                id="state"
+                                placeholder="State"
+                                required
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="pincode">
+                            Pincode
+                        </label>
+
+                        <input
+                            type="text"
+                            id="pincode"
+                            placeholder="6 digit pincode"
+                            maxlength="6"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         PAYMENT
+                         ================================= -->
+
+                    <h2>
+                        Payment Method
+                    </h2>
+
+
+                    <div class="payment-options">
+
+
+                        <label class="payment-option">
+
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="cod"
+                                checked
+                            >
+
+                            <span>
+                                Cash on Delivery
+                            </span>
+
+                        </label>
+
+
+                        <label class="payment-option">
+
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="online"
+                            >
+
+                            <span>
+                                Online Payment
+                            </span>
+
+                        </label>
+
+
+                    </div>
+
+
+                </form>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 ORDER SUMMARY
+                 ===================================== -->
+
+            <div
+                class="checkout-summary"
+                id="checkoutSummary"
+            >
+
+                <h2>
+                    Order Summary
+                </h2>
+
+
+                <div id="checkoutProducts">
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <span id="checkoutSubtotal">
+                        Rs. 0
+                    </span>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Delivery
+                    </span>
+
+                    <span id="checkoutDelivery">
+                        Rs. 0
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="summary-row summary-total"
+                >
+
+                    <span>
+                        Total
+                    </span>
+
+                    <span id="checkoutTotal">
+                        Rs. 0
+                    </span>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="place-order-btn"
+                    onclick="placeOrder()"
+                >
+                    Place Order
+                </button>
+
+
+                <a
+                    href="cart.html"
+                    class="back-cart-btn"
+                >
+                    ← Back to Cart
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h3>
+                ShopKaro
+            </h3>
+
+            <p>
+                Your trusted online shopping destination.
+            </p>
+
+            <p class="copyright">
+                © 2026 ShopKaro. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         CHECKOUT JAVASCRIPT
+         ========================================= -->
+
+    <script>
+
+        function getCheckoutCart() {
+
+            var data =
+                localStorage.getItem(
+                    "shopkaroCart"
+                );
+
+
+            if (!data) {
+
+                return [];
+
+            }
+
+
+            try {
+
+                return JSON.parse(data);
+
+            } catch (error) {
+
+                return [];
+
+            }
+
+        }
+
+
+        function formatCheckoutPrice(price) {
+
+            return "Rs. " +
+                Number(price).toLocaleString(
+                    "en-IN"
+                );
+
+        }
+
+
+        function updateCheckoutCount() {
+
+            var cart =
+                getCheckoutCart();
+
+
+            var count = 0;
+
+
+            for (
+                var i = 0;
+                i < cart.length;
+                i++
+            ) {
+
+                count =
+                    count +
+                    Number(cart[i].quantity);
+
+            }
+
+
+            var element =
+                document.getElementById(
+                    "cart-count"
+                );
+
+
+            if (element) {
+
+                element.innerText =
+                    count;
+
+            }
+
+        }
+
+
+        function loadCheckout() {
+
+            var cart =
+                getCheckoutCart();
+
+
+            var productsContainer =
+                document.getElementById(
+                    "checkoutProducts"
+                );
+
+
+            if (cart.length === 0) {
+
+                productsContainer.innerHTML =
+                    "<p>Your cart is empty.</p>";
+
+                return;
+
+            }
+
+
+            var subtotal = 0;
+
+            var html = "";
+
+
+            for (
+                var i = 0;
+                i < cart.length;
+                i++
+            ) {
+
+                var item =
+                    cart[i];
+
+
+                var price =
+                    Number(item.price);
+
+
+                var quantity =
+                    Number(item.quantity);
+
+
+                var itemTotal =
+                    price * quantity;
+
+
+                subtotal =
+                    subtotal + itemTotal;
+
+
+                html +=
+
+                    '<div class="checkout-product">' +
+
+                        '<img ' +
+                            'src="' + item.image + '" ' +
+                            'alt="' + item.name + '">' +
+
+                        '<div class="checkout-product-info">' +
+
+                            '<h4>' +
+                                item.name +
+                            '</h4>' +
+
+                            '<p>' +
+                                'Qty: ' +
+                                quantity +
+                            '</p>' +
+
+                        '</div>' +
+
+                        '<div class="checkout-product-price">' +
+
+                            formatCheckoutPrice(
+                                itemTotal
+                            ) +
+
+                        '</div>' +
+
+                    '</div>';
+
+            }
+
+
+            productsContainer.innerHTML =
+                html;
+
+
+            var delivery = 0;
+
+
+            if (subtotal < 1000) {
+
+                delivery = 50;
+
+            }
+
+
+            var total =
+                subtotal + delivery;
+
+
+            document.getElementById(
+                "checkoutSubtotal"
+            ).innerText =
+                formatCheckoutPrice(
+                    subtotal
+                );
+
+
+            document.getElementById(
+                "checkoutDelivery"
+            ).innerText =
+                delivery === 0
+                    ? "FREE"
+                    : formatCheckoutPrice(
+                        delivery
+                    );
+
+
+            document.getElementById(
+                "checkoutTotal"
+            ).innerText =
+                formatCheckoutPrice(
+                    total
+                );
+
+        }
+
+
+        function placeOrder() {
+
+            var form =
+                document.getElementById(
+                    "checkoutForm"
+                );
+
+
+            if (!form.checkValidity()) {
+
+                form.reportValidity();
+
+                return;
+
+            }
+
+
+            var cart =
+                getCheckoutCart();
+
+
+            if (cart.length === 0) {
+
+                alert(
+                    "Your cart is empty."
+                );
+
+                return;
+
+            }
+
+
+            var payment =
+                document.querySelector(
+                    'input[name="payment"]:checked'
+                );
+
+
+            var paymentMethod =
+                payment
+                    ? payment.value
+                    : "cod";
+
+
+            localStorage.setItem(
+                "shopkaroPayment",
+                paymentMethod
+            );
+
+
+            localStorage.removeItem(
+                "shopkaroCart"
+            );
+
+
+            window.location.href =
+                "order-success.html";
+
+        }
+
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function() {
+
+                updateCheckoutCount();
+
+                loadCheckout();
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

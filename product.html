@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ShopKaro - Product Details</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <style>
+
+        .product-details-page {
+
+            min-height: calc(100vh - 70px);
+
+            padding: 60px 20px;
+
+            background-color: #f5f7fa;
+
+        }
+
+
+        .product-details-container {
+
+            max-width: 1000px;
+
+            margin: 0 auto;
+
+            background-color: white;
+
+            padding: 35px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 4px 15px
+                rgba(0, 0, 0, 0.08);
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 40px;
+
+            align-items: center;
+
+        }
+
+
+        .details-image {
+
+            width: 100%;
+
+            height: 400px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background-color: #f5f7fa;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+        }
+
+
+        .details-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: contain;
+
+        }
+
+
+        .details-info h1 {
+
+            font-size: 34px;
+
+            color: #222;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .details-price {
+
+            font-size: 28px;
+
+            font-weight: bold;
+
+            color: #007bff;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .details-description {
+
+            color: #666;
+
+            line-height: 1.7;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .quantity-box {
+
+            display: flex;
+
+            align-items: center;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .quantity-box button {
+
+            width: 38px;
+
+            height: 38px;
+
+            border: 1px solid #ddd;
+
+            background-color: #f1f1f1;
+
+            cursor: pointer;
+
+            font-size: 20px;
+
+        }
+
+
+        .quantity-box span {
+
+            width: 45px;
+
+            text-align: center;
+
+            font-weight: bold;
+
+        }
+
+
+        .add-product-btn {
+
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 6px;
+
+            background-color: #28a745;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+        }
+
+
+        .add-product-btn:hover {
+
+            background-color: #218838;
+
+        }
+
+
+        .back-products {
+
+            display: inline-block;
+
+            margin-top: 15px;
+
+            color: #007bff;
+
+            text-decoration: none;
+
+        }
+
+
+        .back-products:hover {
+
+            text-decoration: underline;
+
+        }
+
+
+        @media (max-width: 750px) {
+
+            .product-details-container {
+
+                grid-template-columns: 1fr;
+
+                padding: 20px;
+
+            }
+
+
+            .details-image {
+
+                height: 300px;
+
+            }
+
+
+            .details-info h1 {
+
+                font-size: 28px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <header>
+
+        <div class="logo">
+
+            <a href="index.html">
+                ShopKaro
+            </a>
+
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="products.html">
+                Products
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <div class="cart">
+
+            <a href="cart.html">
+
+                Cart
+
+                <span id="cart-count">
+                    0
+                </span>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- PRODUCT DETAILS -->
+
+    <main class="product-details-page">
+
+        <div
+            id="productDetails"
+            class="product-details-container"
+        >
+
+        </div>
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h3>
+                ShopKaro
+            </h3>
+
+            <p>
+                Your trusted online shopping destination.
+            </p>
+
+            <p class="copyright">
+                © 2026 ShopKaro. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- PRODUCT JAVASCRIPT -->
+
+    <script src="js/product.js"></script>
+
+
+</body>
+
+</html>

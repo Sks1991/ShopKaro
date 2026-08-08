@@ -1,62 +1,221 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>ShopEase | Online Shopping</title>
+<head>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
+    <meta charset="UTF-8">
 
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    />
-  </head>
-  <body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ShopKaro - Online Shopping</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
     <header>
-      <nav class="navbar">
+
+        <!-- Logo -->
         <div class="logo">
-          <h2>ShopEase</h2>
+            <a href="index.html">
+                <img src="images/logo.png" alt="ShopKaro Logo">
+            </a>
         </div>
 
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
 
-          <li><a href="products.html">Products</a></li>
+        <!-- Navigation Menu -->
+        <nav>
 
-          <li><a href="about.html">About</a></li>
+            <a href="index.html">Home</a>
 
-          <li><a href="contact.html">Contact</a></li>
+            <a href="products.html">Products</a>
 
-          <li><a href="login.html">Login</a></li>
+            <a href="about.html">About</a>
 
-          <li>
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+
+        <!-- Cart -->
+        <div class="cart">
+
             <a href="cart.html">
-              <i class="fa-solid fa-cart-shopping"></i>
+                🛒 Cart
+                <span id="cart-count">0</span>
             </a>
-          </li>
-        </ul>
-      </nav>
+
+        </div>
+
     </header>
 
-    <!-- Hero Section Start -->
 
-<section class="hero">
-    <div class="hero-content">
-        <h1>Shop Smart, Live Better</h1>
-        <p>Discover amazing products at the best prices.</p>
-        <a href="products.html">Shop Now</a>
-    </div>
 
-    <div class="hero-image">
-        <img src="images/banner.jpg" alt="Banner">
-    </div>
-</section>
+    <!-- ================= HERO SECTION ================= -->
 
-    <script src="js/script.js"></script>
-  </body>
+    <section class="hero">
+
+        <!-- Banner Image -->
+        <img
+            src="images/banner.jpg"
+            alt="ShopKaro Shopping Banner"
+        >
+
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+
+            <h1>
+                Welcome to ShopKaro
+            </h1>
+
+            <p>
+                Find the best products at the best prices.
+            </p>
+
+            <a href="products.html">
+                <button>
+                    Shop Now
+                </button>
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= PRODUCTS SECTION ================= -->
+
+    <section class="products">
+
+        <h2>
+            Featured Products
+        </h2>
+
+
+        <div class="product-container">
+
+
+            <!-- ================= PRODUCT 1 ================= -->
+
+            <div class="product-card">
+
+                <img
+                    src="images/product1.jpg"
+                    alt="Premium Product"
+                >
+
+                <h3>
+                    Premium Product
+                </h3>
+
+                <p>
+                    ₹999
+                </p>
+
+                <button onclick="addToCart()">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+
+            <!-- ================= PRODUCT 2 ================= -->
+
+            <div class="product-card">
+
+                <img
+                    src="images/product2.jpg"
+                    alt="Latest Product"
+                >
+
+                <h3>
+                    Latest Product
+                </h3>
+
+                <p>
+                    ₹1,499
+                </p>
+
+                <button onclick="addToCart()">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+
+            <!-- ================= PRODUCT 3 ================= -->
+
+            <div class="product-card">
+
+                <img
+                    src="images/product1.jpg"
+                    alt="Smart Product"
+                >
+
+                <h3>
+                    Smart Product
+                </h3>
+
+                <p>
+                    ₹1,999
+                </p>
+
+                <button onclick="addToCart()">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 ShopKaro. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        // Cart Count
+        let cartCount = 0;
+
+
+        // Add Product To Cart
+        function addToCart() {
+
+            cartCount++;
+
+            document.getElementById("cart-count").innerText = cartCount;
+
+        }
+
+    </script>
+
+
+</body>
+
 </html>

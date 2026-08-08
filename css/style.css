@@ -1,0 +1,489 @@
+
+/* =========================================
+   SHOPKARO - STYLE.CSS
+   ========================================= */
+
+
+/* =========================================
+   1. RESET / BASIC SETTINGS
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+
+/* =========================================
+   2. NAVBAR
+   ========================================= */
+
+header {
+    width: 100%;
+    height: 70px;
+
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 50px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* Logo */
+
+.logo img {
+    width: 130px;
+    height: auto;
+    display: block;
+}
+
+
+/* Navigation */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+
+    color: #333;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
+
+/* Cart */
+
+.cart {
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#cart-count {
+    background-color: #007bff;
+
+    color: white;
+
+    padding: 3px 8px;
+
+    border-radius: 50%;
+
+    font-size: 13px;
+
+    margin-left: 3px;
+}
+
+
+/* =========================================
+   3. HERO SECTION
+   ========================================= */
+
+.hero {
+    width: 100%;
+    height: 450px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Banner Image */
+
+.hero > img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* Dark overlay */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.35);
+}
+
+
+/* Hero Content */
+
+.hero-content {
+    position: absolute;
+
+    top: 50%;
+    left: 10%;
+
+    transform: translateY(-50%);
+
+    z-index: 2;
+
+    color: white;
+
+    max-width: 500px;
+}
+
+
+.hero-content h1 {
+    font-size: 48px;
+
+    margin-bottom: 15px;
+
+    font-weight: 700;
+}
+
+
+.hero-content p {
+    font-size: 20px;
+
+    margin-bottom: 25px;
+
+    line-height: 1.5;
+}
+
+
+/* Shop Now Button */
+
+.hero-content button {
+    padding: 13px 28px;
+
+    border: none;
+
+    background-color: #007bff;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.hero-content button:hover {
+    background-color: #0056b3;
+
+    transform: scale(1.05);
+}
+
+
+/* =========================================
+   4. PRODUCTS SECTION
+   ========================================= */
+
+.products {
+    padding: 60px 50px;
+
+    text-align: center;
+
+    background-color: #f5f5f5;
+}
+
+
+.products h2 {
+    font-size: 32px;
+
+    margin-bottom: 40px;
+
+    color: #222;
+}
+
+
+/* Product Container */
+
+.product-container {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: stretch;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================
+   5. PRODUCT CARD
+   ========================================= */
+
+.product-card {
+    width: 260px;
+
+    background-color: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.10);
+
+    transition: 0.3s;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* Card Hover */
+
+.product-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Product Image */
+
+.product-card img {
+    width: 100%;
+
+    height: 200px;
+
+    object-fit: contain;
+
+    margin-bottom: 15px;
+}
+
+
+/* Product Name */
+
+.product-card h3 {
+    font-size: 19px;
+
+    margin-bottom: 10px;
+
+    color: #222;
+}
+
+
+/* Product Price */
+
+.product-card p {
+    font-size: 21px;
+
+    font-weight: bold;
+
+    color: #007bff;
+
+    margin-bottom: 18px;
+}
+
+
+/* Add To Cart Button */
+
+.product-card button {
+    padding: 10px 22px;
+
+    border: none;
+
+    background-color: #28a745;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.product-card button:hover {
+    background-color: #218838;
+
+    transform: scale(1.05);
+}
+
+
+/* =========================================
+   6. FOOTER
+   ========================================= */
+
+footer {
+    width: 100%;
+
+    padding: 25px;
+
+    background-color: #222;
+
+    color: white;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   7. RESPONSIVE DESIGN - TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    header {
+        padding: 0 25px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .hero {
+        height: 400px;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
+
+}
+
+
+/* =========================================
+   8. RESPONSIVE DESIGN - MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    header {
+        height: auto;
+
+        min-height: 70px;
+
+        padding: 15px 20px;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+
+    .logo img {
+        width: 110px;
+    }
+
+
+    nav {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+
+    nav a {
+        font-size: 13px;
+    }
+
+
+    .cart {
+        font-size: 14px;
+    }
+
+
+    .hero {
+        height: 350px;
+    }
+
+
+    .hero-content {
+        left: 7%;
+
+        right: 7%;
+
+        max-width: none;
+    }
+
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+
+    .products {
+        padding: 40px 15px;
+    }
+
+
+    .products h2 {
+        font-size: 28px;
+    }
+
+
+    .product-card {
+        width: 100%;
+
+        max-width: 300px;
+    }
+
+}
+
